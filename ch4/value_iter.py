@@ -4,6 +4,9 @@ if '__file__' in globals():
 from collections import defaultdict
 from common.gridworld import GridWorld
 from ch4.policy_iter import greedy_policy
+# policy iteration과 다르게 value iteration은 정책 평가과 정책 개선을 분리하지 않음
+# 즉 벨만 최적 방정식을 이용해 평가와 개선을 동시에 진행
+# 둘의 공통점은 둘 다 환경을 정확하게 알고 있어야 한다는 점.. real world에서는 어렵기에 mc나 td 방법을 사용
 
 def value_iter_onestep(V, env, gamma):
     for state in env.states():
