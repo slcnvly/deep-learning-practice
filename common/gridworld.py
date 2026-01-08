@@ -64,7 +64,7 @@ class GridWorld:
         self.agent_state = self.start_state
         return self.agent_state
 
-    def step(self, action):
+    def step(self, action): # 환경을 모를 때, 즉 sampling 할 때 사용
         state = self.agent_state
         next_state = self.next_state(state, action)
         reward = self.reward(state, action, next_state)
